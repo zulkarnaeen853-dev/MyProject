@@ -21,7 +21,7 @@ function App() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/users');
+      const response = await axios.get('http://localhost:3000/api/v1/auth/users');
       const data = response.data?.data || response.data || [];
       setAccounts(data);
     } catch (error) {
@@ -52,13 +52,13 @@ function App() {
 
     try {
       if (isEditing && editingId) {
-        await axios.put(`http://localhost:3000/api/v1/update/${editingId}`, {
+        await axios.put(`http://localhost:3000/api/v1/user/update/${editingId}`, {
           name,
           email,
           password,
         });
       } else {
-        await axios.post('http://localhost:3000/api/v1/register', {
+        await axios.post('http://localhost:3000/api/v1/auth/register', {
           name,
           email,
           password,
@@ -80,7 +80,7 @@ function App() {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://localhost:3000/api/v1/delete/${id}`);
+      await axios.delete(`http://localhost:3000/api/v1/user/delete/${id}`);
       if (editingId === id) {
         clearForm();
       }
