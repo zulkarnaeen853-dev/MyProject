@@ -3,7 +3,7 @@ const router = express.Router();
 
 const userController = require('../../controllers/userController');
 
-router.put('/users/:id', userController.updateUser);
-router.delete('/users/:id', userController.deleteUser);
+router.put('/update/:id', userController.updateUser);
+router.delete('/delete/:id', userController.deleteUser);
 
 module.exports = router;
