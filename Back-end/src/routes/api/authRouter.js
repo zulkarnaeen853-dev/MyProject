@@ -3,21 +3,23 @@ const router = express.Router()
 const authController = require('../../controllers/authController');
 const authMiddleware = require('../../middlewares/authMiddleware')
 const multer = require('multer');
+const path = require('path');
 
 
 const picStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '../../uploads');
+    cb(null, path.join(__dirname, '../../uploads'));
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + '-' + uniqueSuffix);
+    console.log(file)
+    // cb(null, file.fieldname + '-' + uniqueSuffix);
   },
 });
 
 const upload = multer({ storage: picStorage });
 
 router.get('/users', authController.users);
-router.post('/register', authMiddleware, authController.register);
+router.post('/register', upload.single('picture'), authMiddleware, authController.register);
 
 module.exports = router
