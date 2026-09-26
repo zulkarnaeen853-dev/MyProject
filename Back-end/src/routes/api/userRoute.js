@@ -1,9 +1,9 @@
-const expresss = require('express')
-const router = expresss.Router()
+const express = require('express');
+const router = express.Router();
 
 const userController = require('../../controllers/userController');
 
-router.put('/update/:id', userController.updateUser);
-router.delete('/delete/:id', userController.deleteUser);
+router.put('/users/:id', userController.updateUser);
+router.delete('/users/:id', userController.deleteUser);
 
-module.exports = router
+module.exports = router;

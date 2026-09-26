@@ -1,9 +1,9 @@
-const expresss = require('express')
-const router = expresss.Router()
-const apiRoutes = require('./api')
-const api = process.env.BASE_URL
+const express = require('express');
+const router = express.Router();
 
-router.use(api, apiRoutes)
+const apiRoutes = require('./api');
+const api = process.env.BASE_URL || /api/v1
 
+router.use(apiRoutes);
 
-module.exports = router
+module.exports = router;

@@ -1,5 +1,5 @@
-const expresss = require('express')
-const router = expresss.Router()
+const express = require('express')
+const router = express.Router()
 
 const authRoute = require('./authRouter')
 const userRoute = require('./userRoute')
@@ -7,4 +7,4 @@ const userRoute = require('./userRoute')
 router.use('/auth', authRoute)
 router.use('/user', userRoute)
 
-module.exports
+module.exports = router
