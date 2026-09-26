@@ -6,11 +6,11 @@ const port = process.env.PORT || 3000;
 const cors = require('cors');
 
 const dbConfiguration = require('./src/configurations/dbConfiguration');
-const router = require('./src/routes');
+const routes = require('./src/routes');
 
 app.use(express.json());
 app.use(cors());
-app.use(router)
+app.use(routes)
 dbConfiguration()
 
 
