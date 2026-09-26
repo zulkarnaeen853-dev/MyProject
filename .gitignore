@@ -1,0 +1,14 @@
+# macOS Finder metadata
+.DS_Store
+**/.DS_Store
+
+# Node
+node_modules/
+.env
+
+# Logs
+npm-debug.log*
+
+# Build output
+/dist
+/build
