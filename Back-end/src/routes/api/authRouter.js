@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const authController = require('../../controllers/authController');
-const authMiddleware = require('../../middlewares/authMiddleware')
+const authMiddleware = require('../../middlewares/authMiddleware');
 const multer = require('multer');
 const path = require('path');
 
@@ -11,9 +11,8 @@ const picStorage = multer.diskStorage({
     cb(null, path.join(__dirname, '../../uploads'));
   },
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    console.log(file)
-    // cb(null, file.fieldname + '-' + uniqueSuffix);
+    const uniqueSuffix = "img-" + Date.now() + '-' + file.originalname;
+    cb(null, uniqueSuffix);
   },
 });
 

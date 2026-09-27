@@ -7,6 +7,7 @@ function App() {
     name: '',
     email: '',
     password: '',
+    picture: '',
   });
 
   const [accounts, setAccounts] = useState([]);
@@ -14,7 +15,7 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
 
   const clearForm = () => {
-    setFormData({ name: '', email: '', password: '' });
+    setFormData({ name: '', email: '', password: '', picture: '' });
     setEditingId(null);
     setIsEditing(false);
   };
@@ -47,6 +48,7 @@ function App() {
     const name = formData.name.trim();
     const email = formData.email.trim();
     const password = formData.password.trim();
+    const picture = formData.picture.trim();
 
     if (!name || !email || !password) return;
 
@@ -56,12 +58,14 @@ function App() {
           name,
           email,
           password,
+          picture,
         });
       } else {
         await axios.post('http://localhost:3000/api/v1/auth/register', {
           name,
           email,
           password,
+          picture,
         });
       }
 
@@ -98,6 +102,7 @@ function App() {
       name: account.name,
       email: account.email,
       password: account.password,
+      picture: account.picture || '',
     });
     setEditingId(id);
     setIsEditing(true);
@@ -134,6 +139,15 @@ function App() {
             onChange={handleChange}
             placeholder="Enter Your Password"
             aria-label="Password"
+          />
+
+          <input
+            type="text"
+            name="picture"
+            value={formData.picture}
+            onChange={handleChange}
+            placeholder="Image url"
+            aria-label="Image name"
           />
 
           <div className="form-actions">
@@ -193,6 +207,11 @@ function App() {
                     <div className="field-row">
                       <span className="field-key">password</span>
                       <span className="field-value password-value">{account.password}</span>
+                    </div>
+
+                    <div className="field-row">
+                      <span className="field-key">picture</span>
+                      <span className="field-value password-value">{account.picture}</span>
                     </div>
                   </div>
                 </div>

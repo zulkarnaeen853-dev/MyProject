@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const userSchema = new mongoose.Schema({
-    // picture: {
-    //     type: String,
-    //     required: true
-    // },
+    picture: {
+        type: String,
+        trim: true
+    },
     name: { 
         type: String,
         required: true,
