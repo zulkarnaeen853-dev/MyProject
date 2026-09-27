@@ -31,6 +31,7 @@ const register = async (req, res) => {
                 name: newUser.name,
                 email: newUser.email,
                 password: newUser.password,
+                picture: newUser.picture
             } 
         });
     } catch (error) {
