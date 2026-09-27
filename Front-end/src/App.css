@@ -90,22 +90,19 @@
 }
 
 .accounts-section {
-  width: min(820px, 90vw);
+  width: min(1100px, 92vw);
   margin-top: 42px;
 }
 
 .accounts-section h2 {
-  margin: 0 0 18px;
-  font-size: clamp(2rem, 2.4vw, 2.6rem);
-  font-weight: 700;
-  color: #1f2a37;
+  display: none;
 }
 
 .accounts-panel {
   min-height: 95px;
-  border: 2px dashed #cfd8e3;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.12);
+  border: 2px dashed #dfe5ee;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.13);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,17 +132,17 @@
 }
 
 .mongo-document {
-  background: #1f2937;
-  border-radius: 12px;
-  border: 1px solid #334155;
+  background: #0e1b2d;
+  border-radius: 14px;
+  border: 1px solid #1e2b3a;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
 }
 
 .document-header {
-  background: #111827;
-  padding: 10px 14px;
-  border-bottom: 1px solid #374151;
+  background: rgba(11, 22, 35, 0.9);
+  padding: 18px 22px 12px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -153,68 +150,72 @@
 }
 
 .document-id {
-  color: #8ab4f8;
-  font-size: 0.8rem;
+  color: #99d9ff;
+  font-size: 1.05rem;
   font-family: 'Courier New', monospace;
+  letter-spacing: 0.04em;
 }
 
 .document-actions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .action-btn {
   border: none;
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 1.05rem;
+  font-weight: 700;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
 
 .action-btn:hover {
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .update-btn {
-  background: #2563eb;
+  background: #2c7ef5;
   color: white;
 }
 
 .delete-btn {
-  background: #dc2626;
+  background: #ef4444;
   color: white;
 }
 
 .document-body {
-  padding: 12px 14px 10px;
+  padding: 18px 20px 24px;
   display: grid;
-  gap: 10px;
+  gap: 18px;
 }
 
 .field-row {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 12px;
+  grid-template-columns: 170px 1fr;
+  gap: 18px;
   align-items: center;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .field-key {
-  color: #9ca3af;
+  color: #dfe8f3;
   font-weight: 700;
   text-transform: lowercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
 }
 
 .field-value {
-  color: #e5e7eb;
+  color: #eef6ff;
   font-family: 'Courier New', monospace;
   word-break: break-word;
+  font-size: 1.1rem;
 }
 
 .password-value {
-  color: #fbbf24;
+  color: #facc15;
 }
 
 .picture-upload-wrapper {
@@ -266,8 +267,8 @@
 .picture-field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 4px;
+  gap: 12px;
+  margin-bottom: 8px;
 }
 
 .picture-container {
@@ -277,12 +278,12 @@
 }
 
 .user-picture {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid #334155;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 2px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 600px) {

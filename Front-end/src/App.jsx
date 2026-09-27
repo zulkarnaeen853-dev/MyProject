@@ -18,6 +18,7 @@ function App() {
     name: '',
     email: '',
     password: '',
+    picture: '',
   });
   const [pictureFile, setPictureFile] = useState(null);
   const [picturePreview, setPicturePreview] = useState('');
@@ -132,6 +133,7 @@ function App() {
       name: account.name,
       email: account.email,
       password: account.password,
+      picture: account.picture || ''
     });
     setPictureFile(null);
     setPicturePreview(getPictureUrl(account.picture));
