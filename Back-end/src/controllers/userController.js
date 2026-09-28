@@ -3,14 +3,11 @@ const user = require('../models/userModel');
 const updateUser = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, email, password } = req.body;
+        const { name, email, password, picture } = req.body;
 
         const updateData = { name, email, password };
-
-        if (req.file) {
-            updateData.picture = req.file.filename;
-        } else if (req.body.picture !== undefined) {
-            updateData.picture = req.body.picture;
+        if (picture !== undefined) {
+            updateData.picture = picture;
         }
 
         const updatedUser = await user.findByIdAndUpdate(

@@ -2,12 +2,7 @@ const user = require('../models/userModel');
 
 const register = async (req, res) => {
     try {
-        const { name, email, password } = req.body;
-
-        let picture = req.body.picture || '';
-        if (req.file) {
-            picture = req.file.filename;
-        }
+        const { name, email, password, picture } = req.body;
 
         const existedUser = await user.findOne({ email });
         if (existedUser) {
@@ -24,7 +19,7 @@ const register = async (req, res) => {
             name,
             email,
             password,
-            picture
+            picture: picture || ''
         });
 
         await newUser.save();
